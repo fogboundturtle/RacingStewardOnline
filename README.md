@@ -1,111 +1,96 @@
-Racing Steward
+# Racing Steward
 
-Ever had a contact in mid-race and wondered who was actually at fault? Racing Steward is an automated collision analyzer built for sim racers. Running quietly alongside RaceRoom Racing Experience or Le Mans Ultimate, it detects on-track contacts and breaks down responsibility.
+Ever had a contact in mid-race and wondered who was actually at fault? **Racing Steward** is an automated collision analyzer for sim racers. It runs quietly alongside **RaceRoom Racing Experience** or **Le Mans Ultimate**, records your session, detects on-track contacts and breaks down who was responsible. It also replays the whole race from above and gives league stewards the tools to rule on incidents and write a report.
 
 # **ALWAYS OFFLINE. LOCAL PROCESSING. NO DATA EVER SENT.**
 
 **Racing Steward has no server, no account and no internet connection. Everything is analysed on your own PC, and your recordings never leave it unless you choose to pass a file on yourself.**
 
-When a collision happens, it provides a complete incident breakdown:
+## Main features
 
-Fault Split: A clear percentage breakdown (e.g., You 70% / Opponent 30%).
+- **Fault split:** a clear percentage breakdown for every contact (e.g. You 70% / Opponent 30%), with a data-quality score. When the data cannot decide a contact, the tool says "needs steward review" instead of guessing.
+- **Plain-English reconstruction:** a step-by-step story of how the incident unfolded, and a timeline of the chain of events.
+- **Evidence:** the rules that counted, in readable names ("Rear-end hit", "No braking before the hit"), with the values measured from the game's physics data.
+- **Top-down incident replay:** an overhead view of the contact, synced with brake, throttle and steering inputs, with mouse-wheel zoom.
+- **Whole-race replay:** every car on the circuit, live standings with gaps and pit stops, a timeline with the incidents marked, zoom, and "follow this car". Formation-lap overlaps (when the game has car collisions off) are marked so they are not mistaken for missed contacts.
+- **Steward tools:** judge every driver by name, record decisions with a ruling, split, penalty and reason (the tool's own number is kept beside yours, and earlier decisions stay in the history), and write a one-page **incident report** for your league.
+- **Statistics:** laps, incidents and fault, your driving, tracks, cars, drivers met and hotspots, added up over all your recordings.
+- **Classes and flags:** each car's class in multi-class races, and blue and yellow flags shown as context for each incident.
+- **Built-in help:** press **F1** for instructions inside the program.
 
-Plain-English Reconstruction: A step-by-step story of how the incident unfolded.
+## 🚨 Early alpha notice
 
-Telemetry & Evidence: Hard data pulled directly from the physics engine.
+Think of Racing Steward's verdicts as a digital second opinion, not absolute truth. **It will get things wrong!** It is not an official steward, and human league stewards can override any verdict inside the app (the original score and the human verdict are both saved side by side).
 
-Top-Down Replay: An overhead visual synced with brake, throttle, and steering inputs.
+> This repository hosts downloads and release notes only. Racing Steward is not open source.
 
-🚨 Early Alpha Notice
+## 📥 Download and installation
 
-Think of Racing Steward’s verdicts as a digital second opinion, not absolute truth. It will get things wrong! It is not an official steward, and human league stewards can easily override any verdict inside the app (the original score and human verdict are both saved side-by-side).
+1. Download the latest installer (`RacingSteward-Setup-*.exe`) from the [Releases page](https://github.com/fogboundturtle/RacingStewardOnline/releases).
+2. Want to double-check the download? The SHA-256 hash is listed in each release's notes.
+3. Run the setup file to install.
 
-Note: This repository hosts downloads and release notes only. Racing Steward is not open source.
+### ⚠️ Windows warning
 
-📥 Download & Installation
+Because the installer is not code-signed yet, Windows SmartScreen will show a "Windows protected your PC / Unknown publisher" warning. Click **More info**, then **Run anyway**. If your antivirus is cautious about unsigned software, you can run the installer through VirusTotal and compare the SHA-256 before launching.
 
-Download: Grab the latest installer (RacingSteward-Setup-*.exe) from the Releases page.
+## 💻 Requirements and game setup
 
-Want to double-check the download? You'll find the SHA-256 hash listed alongside each release note.
+- **OS:** 64-bit Windows 10 or 11. No extra frameworks to install.
+- **RaceRoom Racing Experience:** no setup. It shares its data automatically.
+- **Le Mans Ultimate:** go to **Settings > Gameplay**, turn on **Enable Plugins**, and restart the game. Without it the tool cannot read the game's data.
 
-Launch: Run the setup file to install.
+## 🚀 Quick start
 
-⚠️ Windows Warnings Notice
+1. **Launch** Racing Steward, read the data notice and agree.
+2. **Drive.** Start your sim and race. The app detects the game and records by itself (the line under the menu shows **REC**). Offline AI races are great for testing.
+3. **Close the game when you are done.** The app waits 60 seconds without data, then saves the recording and learns from it by itself. The line under the menu counts it down.
+4. **Review.** On the **Recordings** tab, click a recording: it unfolds to its incidents. Click an incident for the replay, the chain of events, the verdict and the evidence. Drag the thin bars between the panels to make the replay bigger.
+5. **Watch the whole race.** The **Race replay** tab shows every car, the standings and a timeline. Space plays and pauses, the mouse wheel zooms, dragging moves the map.
+6. **Find things.** The search box, the Game / Track / Class filters and "Sort by" find a recording among many. **Statistics** adds up everything.
 
-Because the installer isn't code-signed yet, Windows SmartScreen will display a "Windows protected your PC / Unknown publisher" warning.
+**Menus:** File (open, manage and export recordings), View (screens, text size), Tools (learn, steward view, incident report), Settings (alert, storage), Help (instructions, shortcuts, about).
 
-Click More info, then click Run anyway.
+**Shortcuts:** F1 help · Ctrl+O find a recording · Ctrl+1 / 2 / 3 the three tabs · F5 refresh · Ctrl + plus / minus text size.
 
-If your antivirus is overly cautious with unsigned software, feel free to run the installer through VirusTotal to compare the SHA-256 before launching.
+### Optional: alert over the game
 
-💻 Requirements & Game Setup
+Tick **Settings > Alert after a contact** to get a short alert over the game a few seconds after each contact. It needs the game in **Borderless** or **Windowed** mode (it will not show over exclusive full screen). It never takes the mouse, the keys or the focus.
 
-OS Requirements
+### League stewards
 
-OS: 64-bit Windows 10 or 11.
+Turn on **Tools > Steward view (all drivers)** to judge driver-to-driver incidents impartially, by name. Record your decision on the **Steward decision** tab of each incident. When the race is reviewed, **Tools > Incident report...** writes one page for the league: every incident, your decision first (ruling, split, penalty, reason), pictures before, at and after the contact, and the tool's own analysis below as supporting data. Incidents you did not review say "Not reviewed". The page opens in your browser and is saved on the desktop.
 
-No extra frameworks or dependencies need to be installed manually.
+## 💾 Disk space
 
-Simulator Setup
+- Recordings take about 10 to 40 MB each. **File > Manage recordings...** shows the size of each and can zip a recording (3 to 5 times smaller, and it still opens) or move it to the Recycle Bin.
+- Recordings you have not touched for 7 days are **zipped automatically** (**Settings > Zip old recordings...**). Nothing is lost, and you can change the number of days or turn it off.
+- **Le Mans Ultimate** always records every car. **RaceRoom** records only the cars near you by default, so its whole-race replay shows few cars. **Settings > Record every car (RaceRoom)...** records the whole field: it makes recordings about 4 times bigger (roughly 10 MB per minute of racing, about 300 MB for a 30-minute stint), so it is off until you read the warning and agree.
 
-RaceRoom Racing Experience: Zero setup required! It broadcasts shared data automatically.
+## 🔒 Privacy and local data
 
-Le Mans Ultimate: Go to Settings > Gameplay, enable Enable Plugins, and restart the game. The tool cannot read collision data without this turned on.
+- **100% local processing.** All recordings, track profiles and preferences live in `%LOCALAPPDATA%\RacingSteward`. Racing Steward contains no tracking and no network code, and never sends data anywhere.
+- **What is recorded:** nearby driver names, track positions and inputs as given by the game. None of it leaves your machine unless you share a file yourself.
+- **Sending feedback:** found a strange verdict? Use **File > Export test data...** to make an anonymized ZIP (your name becomes "Tester", steward names become "Steward") and send it yourself.
+- **Uninstalling** leaves your data folder. For a clean wipe, delete `%LOCALAPPDATA%\RacingSteward` by hand.
 
-🚀 Quick Start Guide
+## ⚠️ Known alpha limitations
 
-Launch: Open Racing Steward, review the initial data notice, and agree to proceed.
+- **Verdict accuracy:** the rules are not perfect yet. The goal of this public alpha is to catch edge cases to improve the analyzer.
+- **Telemetry depth:** RaceRoom gives brake, throttle and steering for your car only. Le Mans Ultimate gives them for every car, so its evidence is richer.
+- **Flags:** shown for your car in RaceRoom and for every car in Le Mans Ultimate, as context only. They do not change the fault split, and they appear in a saved recording, not in the live view.
+- **Formation lap:** RaceRoom has car collisions off during the formation lap and countdown, so overlaps there are not counted as contacts.
+- **Lap times:** a clean lap is timed, valid and not in or out of the pits. In Le Mans Ultimate the first lap of a session is not timed.
+- **Le Mans Ultimate calibration:** car sizes and collision thresholds are still being tuned.
+- **Track mapping:** RaceRoom gives no track layout, so the app builds it as you drive and it improves over several laps.
+- **Not fully tested yet:** VR, clean Windows installs, exclusive full screen, and very long sessions.
 
-Drive: Fire up your simulator and hit the track. The app auto-detects telemetry and begins recording (indicated by a REC icon in the top bar). Offline AI sessions are great for testing!
+## 🐛 Reporting issues
 
-Review Incidents: A few seconds after a bump or crash, the incident will populate in your list. Click it to inspect the telemetry replay, event chain, and fault verdict.
+Found a bug or an incorrect verdict? Open a public GitHub Issue describing the track, the game and what went wrong. **Do not attach raw telemetry or recordings to public issues**, because they contain driver names. If your anonymized ZIP is needed, we will reach out.
 
-Manage Archives:
+## 📄 Legal and attribution
 
-Use Recordings... to search, filter, and sort past sessions.
+See [TERMS.md](TERMS.md) for the full terms. Racing Steward is an independent project and is not affiliated with or endorsed by Sector3 Studios (RaceRoom) or Studio 397 (Le Mans Ultimate). All product and brand names belong to their respective owners.
 
-Use Manage recordings... to check disk usage, archive sessions into compressed .zip files (reducing size by 3x–5x without breaking playback), or send old files to the Recycle Bin.
-
-In-Game Overlay (Optional): Check Alert after a contact to get a quick popup notification over your screen after an incident.
-
-Note: Requires running your game in Borderless or Windowed mode (will not render over Exclusive Fullscreen).
-
-League Steward View: Looking to steward a league race? Switch to Steward view (all drivers) to analyze driver-to-driver incidents impartially by name rather than from a single player's perspective.
-
-🔒 Privacy & Local Data
-
-100% Local Processing: All telemetry recordings, track profiles, and user preferences live locally in %LOCALAPPDATA%\RacingSteward. Racing Steward contains zero tracking or network code and never sends data to external servers.
-
-Session Details: Telemetry captures nearby driver names, track positions, and inputs as output by the game engine. None of this leaves your machine unless you share it yourself.
-
-Sending Feedback: Found a weird verdict? Click Export test data... to generate an anonymized ZIP file. This automatically strips out player identities (replacing your name with "Tester" and stewards with "Steward") so you can safely send it over for debugging.
-
-Uninstalling: Removing the application leaves your user data folder intact. If you want a completely clean wipe, simply delete the %LOCALAPPDATA%\RacingSteward folder manually.
-
-⚠️ Known Alpha Limitations
-
-Verdict Accuracy: The math isn't perfect yet. The primary goal of this public alpha is catching edge-case collisions to train the analyzer engine.
-
-Telemetry Depth: RaceRoom only exposes telemetry (brake, throttle, steering) for your vehicle. Le Mans Ultimate provides full telemetry across all nearby cars, making its evidence breakdowns significantly richer.
-
-LMU Calibration: Vehicle hitboxes and collision thresholds for Le Mans Ultimate are still undergoing tuning.
-
-Track Mapping: Because RaceRoom doesn't supply map layouts, the app builds track geometry dynamically as you drive. Layout precision improves over multiple laps.
-
-Untested Scenarios: VR setups, clean Windows installs without developer packages, and Exclusive Fullscreen modes have not been fully verified yet.
-
-🐛 Reporting Issues
-
-Found a bug or an incorrect verdict?
-
-Open a public GitHub Issue describing the track, game, and what went wrong.
-
-Do not attach raw telemetry or log files to public issues as they contain driver names.
-
-If we need your anonymized ZIP or telemetry files to investigate, we will reach out with a secure upload link or email.
-
-📄 Legal & Attribution
-
-Check out TERMS.md for full terms. Racing Steward is an independent project and is not affiliated with or endorsed by Sector3 Studios (RaceRoom) or Studio 397 (Le Mans Ultimate). All product and brand names belong to their respective owners.
-
-Third-party libraries used in this build (Dear ImGui, nlohmann/json, RaceRoom shared-memory headers) along with their corresponding licenses are detailed in THIRD-PARTY-NOTICES.txt located in the installation folder.
+Third-party libraries used in this build (Dear ImGui, nlohmann/json, RaceRoom shared-memory headers) and their licenses are listed in `THIRD-PARTY-NOTICES.txt` in the installation folder.
