@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.6
+- New: a Help window (Help > How to use Racing Steward, or F1) with topics: getting started, recordings and incidents, race replay, steward decisions and the report, statistics, storage, the alert, shortcuts, and what to do when something goes wrong. The About box is rewritten.
+- New: you can change the size of the panels by dragging the thin bars between them: the replay can be made much taller, and the widths of the list, replay and verdict can be changed. Double-click a bar for the default. The sizes are remembered.
+- New: the mouse wheel zooms the incident replay, as it does on the race replay map.
+- New: the race replay marks the formation lap. When RaceRoom has car collisions off (formation lap and countdown) and cars drive through each other, amber marks on the timeline and a note under the map say so. It is not counted as a contact.
+- Better: the recordings list is easier to read: each recording is its own card, and the open one has an orange edge and its incidents inside it.
+- Better: the race replay zoom and moving of the map are easier to find (Map + / - / Fit).
+
 ## 0.1.0-alpha.5
 - New: a menu bar (File, View, Tools, Settings, Help) and tabs instead of a row of buttons, with keyboard shortcuts (Ctrl+O, Ctrl+1/2/3, F5, Ctrl+plus/minus). Greyed-out items say what they need.
 - New: Recordings and incidents are one tab. The list shows each recording as a card; the open one unfolds to its incidents, and the incident you click is shown beside it. Search, Game / Track / Class filters and a "Sort by" dropdown.
@@ -7,6 +15,7 @@
 - New: RaceRoom can record every car, so the race replay shows the whole field (Settings > Record every car (RaceRoom)). It is off until you agree to a warning: recordings become about 4 times bigger (roughly 10 MB for each minute of racing). Le Mans Ultimate always records every car.
 - New: the league incident report (Tools > Incident report..., steward view): one page for the browser with every incident, the steward's decision first, pictures of the contact, and the tool's analysis as supporting data.
 - New: recordings that have not been touched for 7 days are zipped by themselves (Settings > Zip old recordings... changes the days or turns it off). Recordings with a steward decision stay as they are.
+- Better: the tester notes describe the new window.
 
 ## 0.1.0-alpha.4
 - New: a Statistics screen ("Statistics..." in the top bar) with overview, driving, tracks, cars, drivers, trends and hotspots, counted from all your recordings. Recordings are counted when you open them; "Count them now" counts the rest.
