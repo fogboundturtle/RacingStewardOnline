@@ -2,6 +2,10 @@ Racing Steward
 
 Ever had a contact in mid-race and wondered who was actually at fault? Racing Steward is an automated collision analyzer built for sim racers. Running quietly alongside RaceRoom Racing Experience or Le Mans Ultimate, it detects on-track contacts and breaks down responsibility.
 
+# **ALWAYS OFFLINE. LOCAL PROCESSING. NO DATA EVER SENT.**
+
+**Racing Steward has no server, no account and no internet connection. Everything is analysed on your own PC, and your recordings never leave it unless you choose to pass a file on yourself.**
+
 When a collision happens, it provides a complete incident breakdown:
 
 Fault Split: A clear percentage breakdown (e.g., You 70% / Opponent 30%).
