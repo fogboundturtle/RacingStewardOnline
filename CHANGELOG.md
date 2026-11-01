@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.5 (built, not yet published)
+- New: a menu bar (File, View, Tools, Settings, Help) and tabs instead of a row of buttons, with keyboard shortcuts (Ctrl+O, Ctrl+1/2/3, F5, Ctrl+plus/minus). Greyed-out items say what they need.
+- New: Recordings and incidents are one tab. The list shows each recording as a card; the open one unfolds to its incidents, and the incident you click is shown beside it. Search, Game / Track / Class filters and a "Sort by" dropdown.
+- New: Race replay tab: the whole race from above with every car, the standings with gaps and pit stops, and a timeline with the incidents marked. Play, pause and speed up to 32x, follow a car, zoom with the mouse wheel and move the map by dragging.
+- New: RaceRoom can record every car, so the race replay shows the whole field (Settings > Record every car (RaceRoom)). It is off until you agree to a warning: recordings become about 4 times bigger (roughly 10 MB for each minute of racing). Le Mans Ultimate always records every car.
+- New: the league incident report (Tools > Incident report..., steward view): one page for the browser with every incident, the steward's decision first, pictures of the contact, and the tool's analysis as supporting data.
+- New: recordings that have not been touched for 7 days are zipped by themselves (Settings > Zip old recordings... changes the days or turns it off). Recordings with a steward decision stay as they are.
+- Better: the tester notes describe the new window.
+
 ## 0.1.0-alpha.4
 - New: a Statistics screen ("Statistics..." in the top bar) with overview, driving, tracks, cars, drivers, trends and hotspots, counted from all your recordings. Recordings are counted when you open them; "Count them now" counts the rest.
 - New: a darker, racing-style look, and an incident screen that needs no scrolling: replay on the left, verdict on the right, tabs (Evidence, Timeline, Steward decision, Each contact) underneath.
