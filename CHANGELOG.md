@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0-alpha.5 (built, not yet published)
+## 0.1.0-alpha.5
 - New: a menu bar (File, View, Tools, Settings, Help) and tabs instead of a row of buttons, with keyboard shortcuts (Ctrl+O, Ctrl+1/2/3, F5, Ctrl+plus/minus). Greyed-out items say what they need.
 - New: Recordings and incidents are one tab. The list shows each recording as a card; the open one unfolds to its incidents, and the incident you click is shown beside it. Search, Game / Track / Class filters and a "Sort by" dropdown.
 - New: Race replay tab: the whole race from above with every car, the standings with gaps and pit stops, and a timeline with the incidents marked. Play, pause and speed up to 32x, follow a car, zoom with the mouse wheel and move the map by dragging.
