@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0-alpha.8
+- New fault rule: a slow drift into another car's lane on a straight. The tool now looks at the last 10 seconds, against the road: if the car ahead drifted at least 1 m more toward a car close behind it than that car moved toward it, on a road that stays straight (and not in the 100 m before a corner), the car ahead is blamed for the lane change and the car behind is not blamed for the blind spot. Nothing in the older recordings we checked changes except one long contact that was already marked "needs steward review".
+- Statistics is counted again after this update (open a recording, or press "Count them now"), because the fault rules changed.
+
 ## 0.1.0-alpha.7
 - New: File > Import test data... takes the zip someone made with Export test data and adds its recordings to a separate Imported list (tagged "imported"; a box under the filters shows all, yours or imported). They are kept apart from your own: they are not counted in your statistics or best laps. A name already in use gets "(2)" after it; nothing is overwritten.
 - New: Settings > Recordings folder... chooses where recordings are kept. It asks whether to move the recordings you already have, and the new folder is used from the next start. If the chosen folder is not there at start (a drive that is not connected), the default folder is used and the program says so.
@@ -8,6 +12,7 @@
 - Better fault judgement, using the road: the tool learns which way the road points from the cars that drive it. On a straight, a car that moves sideways into another is blamed, whoever was ahead; the 100 m before a corner count as the braking zone, where the car ahead keeps its line. A car ahead that moves into a faster car holding its line close behind, or that has just caused another contact, is blamed for it (a faster car that dives sideways into the car ahead still is). A car that was already level with the other car's middle is no longer blamed for "no braking". A car sent into a spin by another car is not blamed for what it then hits. In the first laps of a session the road is not known yet and the older rules apply.
 - Fixed: the program no longer saves an empty "probe_..." recording when the game shares its data in the menus before any session has started. Empty recordings of that kind left by older versions are removed when the program starts.
 - Fixed: a recording whose name ends in "(2)" (two sessions in the same minute) showed "(no date)"; it now shows its date.
+- Better: the tester notes describe the new menus and the fault rules.
 
 ## 0.1.0-alpha.6
 - New: a Help window (Help > How to use Racing Steward, or F1) with topics: getting started, recordings and incidents, race replay, steward decisions and the report, statistics, storage, the alert, shortcuts, and what to do when something goes wrong. The About box is rewritten.
