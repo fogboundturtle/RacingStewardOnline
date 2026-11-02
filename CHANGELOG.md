@@ -8,7 +8,6 @@
 - Better fault judgement, using the road: the tool learns which way the road points from the cars that drive it. On a straight, a car that moves sideways into another is blamed, whoever was ahead; the 100 m before a corner count as the braking zone, where the car ahead keeps its line. A car ahead that moves into a faster car holding its line close behind, or that has just caused another contact, is blamed for it (a faster car that dives sideways into the car ahead still is). A car that was already level with the other car's middle is no longer blamed for "no braking". A car sent into a spin by another car is not blamed for what it then hits. In the first laps of a session the road is not known yet and the older rules apply.
 - Fixed: the program no longer saves an empty "probe_..." recording when the game shares its data in the menus before any session has started. Empty recordings of that kind left by older versions are removed when the program starts.
 - Fixed: a recording whose name ends in "(2)" (two sessions in the same minute) showed "(no date)"; it now shows its date.
-- Better: the tester notes describe the new menus and the fault rules.
 
 ## 0.1.0-alpha.6
 - New: a Help window (Help > How to use Racing Steward, or F1) with topics: getting started, recordings and incidents, race replay, steward decisions and the report, statistics, storage, the alert, shortcuts, and what to do when something goes wrong. The About box is rewritten.
