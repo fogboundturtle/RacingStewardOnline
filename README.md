@@ -14,7 +14,9 @@ Ever had a contact in mid-race and wondered who was actually at fault? **Racing 
 - **Top-down incident replay:** an overhead view of the contact, synced with brake, throttle and steering inputs, with mouse-wheel zoom.
 - **Whole-race replay:** every car on the circuit, live standings with gaps and pit stops, a timeline with the incidents marked, zoom, and "follow this car". Formation-lap overlaps (when the game has car collisions off) are marked so they are not mistaken for missed contacts.
 - **Steward tools:** judge every driver by name, record decisions with a ruling, split, penalty and reason (the tool's own number is kept beside yours, and earlier decisions stay in the history), and write a one-page **incident report** for your league.
-- **Statistics:** laps, incidents and fault, your driving, tracks, cars, drivers met and hotspots, added up over all your recordings.
+- **Statistics:** laps, incidents and fault, your driving, tracks, cars, drivers met and hotspots, added up over all your recordings, plus your **best lap on each track for a car class you pick**, with how it improved and a "Show lap" button.
+- **Road-aware fault rules:** the tool learns which way the road points from the cars that drive it, so it can tell a lane change on a straight from a turn-in at a corner, and it does not blame a driver for a spin another car caused.
+- **Import:** open the recordings someone exported for you (File > Import test data...); they are kept apart from your own and are not counted in your statistics.
 - **Classes and flags:** each car's class in multi-class races, and blue and yellow flags shown as context for each incident.
 - **Built-in help:** press **F1** for instructions inside the program.
 
@@ -49,7 +51,7 @@ Because the installer is not code-signed yet, Windows SmartScreen will show a "W
 5. **Watch the whole race.** The **Race replay** tab shows every car, the standings and a timeline. Space plays and pauses, the mouse wheel zooms, dragging moves the map.
 6. **Find things.** The search box, the Game / Track / Class filters and "Sort by" find a recording among many. **Statistics** adds up everything.
 
-**Menus:** File (open, manage and export recordings), View (screens, text size), Tools (learn, steward view, incident report), Settings (alert, storage), Help (instructions, shortcuts, about).
+**Menus:** File (open, manage, export and import recordings), View (screens, text size), Tools (learn, steward view, incident report), Settings (alert, storage, recordings folder), Help (instructions, shortcuts, about).
 
 **Shortcuts:** F1 help · Ctrl+O find a recording · Ctrl+1 / 2 / 3 the three tabs · F5 refresh · Ctrl + plus / minus text size.
 
@@ -64,6 +66,7 @@ Turn on **Tools > Steward view (all drivers)** to judge driver-to-driver inciden
 ## 💾 Disk space
 
 - Recordings take about 10 to 40 MB each. **File > Manage recordings...** shows the size of each and can zip a recording (3 to 5 times smaller, and it still opens) or move it to the Recycle Bin.
+- **Settings > Recordings folder...** chooses where recordings are kept (for example on a bigger drive). It asks whether to move the recordings you already have, and the new folder is used from the next start.
 - Recordings you have not touched for 7 days are **zipped automatically** (**Settings > Zip old recordings...**). Nothing is lost, and you can change the number of days or turn it off.
 - **Le Mans Ultimate** always records every car. **RaceRoom** records only the cars near you by default, so its whole-race replay shows few cars. **Settings > Record every car (RaceRoom)...** records the whole field: it makes recordings about 4 times bigger (roughly 10 MB per minute of racing, about 300 MB for a 30-minute stint), so it is off until you read the warning and agree.
 
@@ -77,6 +80,7 @@ Turn on **Tools > Steward view (all drivers)** to judge driver-to-driver inciden
 ## ⚠️ Known alpha limitations
 
 - **Verdict accuracy:** the rules are not perfect yet. The goal of this public alpha is to catch edge cases to improve the analyzer.
+- **First laps:** the road is learned from the cars that drive it during the session, so in the first laps the older rules apply.
 - **Telemetry depth:** RaceRoom gives brake, throttle and steering for your car only. Le Mans Ultimate gives them for every car, so its evidence is richer.
 - **Flags:** shown for your car in RaceRoom and for every car in Le Mans Ultimate, as context only. They do not change the fault split, and they appear in a saved recording, not in the live view.
 - **Formation lap:** RaceRoom has car collisions off during the formation lap and countdown, so overlaps there are not counted as contacts.
