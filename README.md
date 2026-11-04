@@ -16,6 +16,8 @@ Ever had a contact in mid-race and wondered who was actually at fault? **Racing 
 - **Steward tools:** judge every driver by name, record decisions with a ruling, split, penalty and reason (the tool's own number is kept beside yours, and earlier decisions stay in the history), and write a one-page **incident report** for your league.
 - **Statistics:** laps, incidents and fault, your driving, tracks, cars, drivers met and hotspots, added up over all your recordings, plus your **best lap on each track for a car class you pick**, with how it improved and a "Show lap" button.
 - **Road-aware fault rules:** the tool learns which way the road points from the cars that drive it, so it can tell a lane change on a straight from a turn-in at a corner, and it does not blame a driver for a spin another car caused.
+- **The line the field drives:** from all the cars of a recording the tool learns the usual line through each stretch of the track, and in a side contact it measures who moved toward whom against that line, so in a corner a car that moved away and left room is not blamed for the other car closing the gap.
+- **Field of view:** the incident replay can shade what the two drivers could see (in view, the blind spot, the mirrors), and the tool uses it to judge how well a driver knew of the other car. It is an assumption (a cockpit view), not the driver's real camera.
 - **Import:** open the recordings someone exported for you (File > Import test data...); they are kept apart from your own and are not counted in your statistics.
 - **Classes and flags:** each car's class in multi-class races, and blue and yellow flags shown as context for each incident.
 - **Built-in help:** press **F1** for instructions inside the program.
@@ -68,19 +70,20 @@ Turn on **Tools > Steward view (all drivers)** to judge driver-to-driver inciden
 - Recordings take about 10 to 40 MB each. **File > Manage recordings...** shows the size of each and can zip a recording (3 to 5 times smaller, and it still opens) or move it to the Recycle Bin.
 - **Settings > Recordings folder...** chooses where recordings are kept (for example on a bigger drive). It asks whether to move the recordings you already have, and the new folder is used from the next start.
 - Recordings you have not touched for 7 days are **zipped automatically** (**Settings > Zip old recordings...**). Nothing is lost, and you can change the number of days or turn it off.
-- **Le Mans Ultimate** always records every car. **RaceRoom** records only the cars near you by default, so its whole-race replay shows few cars. **Settings > Record every car (RaceRoom)...** records the whole field: it makes recordings about 4 times bigger (roughly 10 MB per minute of racing, about 300 MB for a 30-minute stint), so it is off until you read the warning and agree.
+- **Both games record every car.** In **RaceRoom** this makes recordings about 4 times bigger (roughly 10 MB per minute of racing, about 300 MB for a 30-minute stint, and about 60 to 100 MB once zipped), and the first screen says so. If you are short of space, **Settings > Record every car (RaceRoom)...** turns it off: only the cars within about 150 m of you are kept then, and the whole-race replay shows few cars. A change applies from the next recording.
 
 ## 🔒 Privacy and local data
 
 - **100% local processing.** All recordings, track profiles and preferences live in `%LOCALAPPDATA%\RacingSteward`. Racing Steward contains no tracking and no network code, and never sends data anywhere.
-- **What is recorded:** nearby driver names, track positions and inputs as given by the game. None of it leaves your machine unless you share a file yourself.
+- **What is recorded:** the driver names, track positions and inputs of the cars in the session, as given by the game (with "Record every car" off in RaceRoom, only the cars near you). None of it leaves your machine unless you share a file yourself.
 - **Sending feedback:** found a strange verdict? Use **File > Export test data...** to make an anonymized ZIP (your name becomes "Tester", steward names become "Steward") and send it yourself.
 - **Uninstalling** leaves your data folder. For a clean wipe, delete `%LOCALAPPDATA%\RacingSteward` by hand.
 
 ## ⚠️ Known alpha limitations
 
 - **Verdict accuracy:** the rules are not perfect yet. The goal of this public alpha is to catch edge cases to improve the analyzer.
-- **First laps:** the road is learned from the cars that drive it during the session, so in the first laps the older rules apply.
+- **First laps and the live view:** the road and the usual line are learned from the cars that drive during the session. A saved recording has them from the first lap, but the live view and the first moments of a session judge with the older rules.
+- **Big recordings:** a 30-minute race with every car is a big file. How long it takes to open, and how much it costs the game while recording, is not measured yet; please tell us if you notice either.
 - **Telemetry depth:** RaceRoom gives brake, throttle and steering for your car only. Le Mans Ultimate gives them for every car, so its evidence is richer.
 - **Flags:** shown for your car in RaceRoom and for every car in Le Mans Ultimate, as context only. They do not change the fault split, and they appear in a saved recording, not in the live view.
 - **Formation lap:** RaceRoom has car collisions off during the formation lap and countdown, so overlaps there are not counted as contacts.
