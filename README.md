@@ -1,6 +1,6 @@
 # Racing Steward
 
-Ever had a contact in mid-race and wondered who was actually at fault? **Racing Steward** is an automated collision analyzer for sim racers. It runs quietly alongside **RaceRoom Racing Experience** or **Le Mans Ultimate**, records your session, detects on-track contacts and breaks down who was responsible. It also replays the whole race from above and gives league stewards the tools to rule on incidents and write a report.
+Ever had a contact in mid-race and wondered who was actually at fault? **Racing Steward** is an automated collision analyzer for sim racers. It runs quietly alongside **RaceRoom Racing Experience**, **Le Mans Ultimate** or **Automobilista 2** (experimental), records your session, detects on-track contacts and breaks down who was responsible. It also replays the whole race from above and gives league stewards the tools to rule on incidents and write a report.
 
 # **ALWAYS OFFLINE. LOCAL PROCESSING. NO DATA EVER SENT.**
 
@@ -43,6 +43,7 @@ Because the installer is not code-signed yet, Windows SmartScreen will show a "W
 - **OS:** 64-bit Windows 10 or 11. No extra frameworks to install.
 - **RaceRoom Racing Experience:** no setup. It shares its data automatically.
 - **Le Mans Ultimate:** go to **Settings > Gameplay**, turn on **Enable Plugins**, and restart the game. Without it the tool cannot read the game's data.
+- **Automobilista 2 (experimental):** go to **Options > System > Shared Memory**, set it to **Project CARS 2**, and restart the game. Without it the tool cannot read the game's data. Support is new and was checked on very little data.
 
 ## 🚀 Quick start
 
@@ -89,6 +90,7 @@ Turn on **Tools > Steward view (all drivers)** to judge driver-to-driver inciden
 - **Formation lap:** RaceRoom has car collisions off during the formation lap and countdown, so overlaps there are not counted as contacts.
 - **Lap times:** a clean lap is timed, valid and not in or out of the pits. In Le Mans Ultimate the first lap of a session is not timed.
 - **Le Mans Ultimate calibration:** car sizes and collision thresholds are still being tuned.
+- **Automobilista 2:** experimental. The game gives other cars' position and speed but no inputs, and a collision strength only for your car, so verdicts rest on less data. Thresholds and car sizes are first guesses.
 - **Track mapping:** RaceRoom gives no track layout, so the app builds it as you drive and it improves over several laps.
 - **Not fully tested yet:** VR, clean Windows installs, exclusive full screen, and very long sessions.
 
@@ -98,6 +100,6 @@ Found a bug or an incorrect verdict? Open a public GitHub Issue describing the t
 
 ## 📄 Legal and attribution
 
-See [TERMS.md](TERMS.md) for the full terms. Racing Steward is an independent project and is not affiliated with or endorsed by Sector3 Studios (RaceRoom) or Studio 397 (Le Mans Ultimate). All product and brand names belong to their respective owners.
+See [TERMS.md](TERMS.md) for the full terms. Racing Steward is an independent project and is not affiliated with or endorsed by Sector3 Studios (RaceRoom), Studio 397 (Le Mans Ultimate) or Reiza Studios (Automobilista 2). All product and brand names belong to their respective owners.
 
 Third-party libraries used in this build (Dear ImGui, nlohmann/json, RaceRoom shared-memory headers) and their licenses are listed in `THIRD-PARTY-NOTICES.txt` in the installation folder.
