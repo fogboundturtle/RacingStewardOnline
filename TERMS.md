@@ -10,7 +10,7 @@
 
 **4. What you may not do.** Do not sell the program, redistribute modified copies, or present it as your own. You may share the link to the official download page. [Add or remove: reverse engineering, use in paid services, etc.]
 
-**5. Your data.** The program keeps its recordings and settings on your PC and never sends them anywhere. Anything you export and send to someone is your decision. Recordings contain other drivers' names as the game reports them; handle them with care and do not publish them.
+**5. Your data.** The program keeps its recordings and settings on your PC and never sends them anywhere, with one optional exception that is off until you turn it on: a league steward can have the program send a penalty to their own RaceRoom dedicated server, at the address they type. Anything you export and send to someone is your decision. Recordings contain other drivers' names as the game reports them; handle them with care and do not publish them.
 
 **6. Third-party software.** The program contains third-party components under their own licences, listed in `THIRD-PARTY-NOTICES.txt` (installed with the program). Those licences apply to those components.
 
