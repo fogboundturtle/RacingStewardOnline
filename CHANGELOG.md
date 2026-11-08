@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.0-alpha.15
+- New: the first person view picks a sky at random each time it opens (11 daytime skies, 4 dusk, 2 night), by the time of day of the recording (the clock in its folder name): day, dusk or night. At night the sky is dark but the ground is not yet dimmed.
+- New: where a circuit is known (51 RaceRoom and Le Mans Ultimate circuits, from OpenStreetMap data that comes with the program), the pit lane and the grandstands are put where they really are, not guessed from the road. The map is laid over the track the recording drove; if it does not fit (another layout, or a game that differs from the real track) the old guessed layout is used. The program never downloads anything: the data is the file circuits.rsc beside it.
+- New: the ground has sand, gravel and dirt pictures. Circuits in the desert and Laguna Seca have sand round the track (a short list by name, a guess for other circuits), a gravel strip runs along each road edge (wider on the outside of corners), and places where the car's tyres really drove on sand, gravel or dirt show those pictures.
+- New: Mount Panorama (Bathurst) has painted concrete walls (blue, with red blocks and white panels) along both sides of the mountain section, between 500 m and 4150 m of the lap. Placed by a rule for this circuit only; the real wall differs in places.
+- Changed: the road at the start line is joined to the end of the lap, so there is no gap of bare grass in front of the line.
+- Fixed: opening the first person view on a big circuit (Laguna Seca) froze the program for a long time; the pit entry and exit now join the track, pit lane lines no longer cross the track, and buildings no longer block the pit entry.
+- Known: the program can crash with a memory error when switching to another recording while a replay is playing (seen twice, not yet found). If it happens to you, please tell us what you clicked. The map data has only been checked by eye on a few circuits.
+- Data: pit lanes and grandstands (c) OpenStreetMap contributors, Open Database Licence (https://www.openstreetmap.org/copyright). The sand, gravel and dirt pictures are CC0 textures from Poly Haven.
+
 ## 0.1.0-alpha.14
 - New: the first person view has real car models, chosen by the car's class: GT3 and DTM, GT4, touring cars, stock cars and open wheel cars each have their own shape (prototypes still use the plain one). The wheels turn with the speed of the car, the paint is glossy, and the brake lights glow when the driver brakes (from the pedal when the game gives it, otherwise worked out from the car slowing down). Models are shown in detail within 30 m of the camera.
 - New: the road, the grass and the sky have pictures (tarmac, grass, clouds) instead of flat colour.
