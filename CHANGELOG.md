@@ -6,6 +6,7 @@
 - AC Evo: the game gives no impact reading, so contacts come from the cars overlapping plus a sudden speed change. Pit lane and ground surface are not read yet.
 - Changed: a car that moves across in front of you, then brakes hard for a corner just ahead, counts as a lane change (half weight), not a cut-off. Switch: Settings > analysis rules > Cut-off and vision.
 - Changed: the top line says "Waiting for a game to load".
+
 ## 0.1.0-alpha.16
 - Fixed: the program crashed now and then with a memory error (often while a race was being recorded, or when switching recordings). The cause was found in the crash reports: the three readers of the marker, apply and dismiss keys and wheel buttons looked for controllers at the same moment, and the Windows controller service (DirectInput) is not safe for that. They now take turns.
 - Changed: when the game is closed, the recording now ends after 15 seconds without data (it was 60), so the last race shows in the list without closing Racing Steward. A pause in the game that lasts longer than 15 seconds also ends the recording; what follows is saved as a recording of its own.
