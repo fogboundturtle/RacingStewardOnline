@@ -8,117 +8,118 @@
 - Changed: the top line says "Waiting for a game to load".
 
 ## 0.1.0-alpha.16
-- Fixed: the program crashed now and then with a memory error (often while a race was being recorded, or when switching recordings). The cause was found in the crash reports: the three readers of the marker, apply and dismiss keys and wheel buttons looked for controllers at the same moment, and the Windows controller service (DirectInput) is not safe for that. They now take turns.
-- Changed: when the game is closed, the recording now ends after 15 seconds without data (it was 60), so the last race shows in the list without closing Racing Steward. A pause in the game that lasts longer than 15 seconds also ends the recording; what follows is saved as a recording of its own.
-- Known: the 3D view uses 4x anti-aliasing, but the edges between the ground pictures (grass, gravel, sand) look stepped because they come from the recorded tyre positions, not from the picture. This is not fixed yet.
+- Fixed: random crash (memory error) while recording or switching recordings.
+- Changed: a closed game ends the recording after 15 s without data (was 60). A pause longer than 15 s also ends it.
+- Known: edges between ground pictures (grass, gravel, sand) look stepped in the 3D view.
+
 ## 0.1.0-alpha.15
-- New: the first person view picks a sky at random each time it opens (11 daytime skies, 4 dusk, 2 night), by the time of day of the recording (the clock in its folder name): day, dusk or night. At night the sky is dark but the ground is not yet dimmed.
-- New: where a circuit is known (51 RaceRoom and Le Mans Ultimate circuits, from OpenStreetMap data that comes with the program), the pit lane and the grandstands are put where they really are, not guessed from the road. The map is laid over the track the recording drove; if it does not fit (another layout, or a game that differs from the real track) the old guessed layout is used. The program never downloads anything: the data is the file circuits.rsc beside it.
-- New: the ground has sand, gravel and dirt pictures. Circuits in the desert and Laguna Seca have sand round the track (a short list by name, a guess for other circuits), a gravel strip runs along each road edge (wider on the outside of corners), and places where the car's tyres really drove on sand, gravel or dirt show those pictures.
-- New: Mount Panorama (Bathurst) has painted concrete walls (blue, with red blocks and white panels) along both sides of the mountain section, between 500 m and 4150 m of the lap. Placed by a rule for this circuit only; the real wall differs in places.
-- Changed: the road at the start line is joined to the end of the lap, so there is no gap of bare grass in front of the line.
-- Fixed: opening the first person view on a big circuit (Laguna Seca) froze the program for a long time; the pit entry and exit now join the track, pit lane lines no longer cross the track, and buildings no longer block the pit entry.
-- Known: the program can crash with a memory error when switching to another recording while a replay is playing (seen twice, not yet found). If it happens to you, please tell us what you clicked. The map data has only been checked by eye on a few circuits.
-- Data: pit lanes and grandstands (c) OpenStreetMap contributors, Open Database Licence (https://www.openstreetmap.org/copyright). The sand, gravel and dirt pictures are CC0 textures from Poly Haven.
+- New: first person view picks a random sky (day, dusk or night) by the recording's time of day.
+- New: pit lane and grandstands placed from OpenStreetMap data for 51 RaceRoom and Le Mans Ultimate circuits (file circuits.rsc, nothing is downloaded). Falls back to the old guess if the map does not fit.
+- New: sand, gravel and dirt ground pictures; gravel strip along road edges; sand round desert circuits and Laguna Seca.
+- New: painted concrete walls on the Mount Panorama (Bathurst) mountain section. Placed by a rule, not exact.
+- Changed: road at the start line joins the end of the lap (no bare gap).
+- Fixed: first person view froze on big circuits (Laguna Seca); pit entry and exit join the track; pit lane lines no longer cross it.
+- Known: crash when switching recordings during a replay (seen twice, cause not found). Map data checked by eye on a few circuits only.
+- Data: pit lanes and grandstands (c) OpenStreetMap contributors, ODbL (https://www.openstreetmap.org/copyright). Sand, gravel and dirt pictures: CC0, Poly Haven.
 
 ## 0.1.0-alpha.14
-- New: the first person view has real car models, chosen by the car's class: GT3 and DTM, GT4, touring cars, stock cars and open wheel cars each have their own shape (prototypes still use the plain one). The wheels turn with the speed of the car, the paint is glossy, and the brake lights glow when the driver brakes (from the pedal when the game gives it, otherwise worked out from the car slowing down). Models are shown in detail within 30 m of the camera.
-- New: the road, the grass and the sky have pictures (tarmac, grass, clouds) instead of flat colour.
-- New: distance boards (200, 150, 100 and 50 m) stand beside the track before each corner. The View menu has a switch for them.
-- New: the start straight has a start gantry over the line, grandstands, a pit lane with a row of garages and the roads that join it to the track, and barriers along both sides. They are placed from the road and from where cars parked in the pits, so they are a good guess, not the real circuit. The View menu has a switch for them.
-- Changed: the program now comes with the model and picture files (about 3 MB more to download). If one is missing, that part is drawn plain.
-- Known: the models and the scenery have only been looked at in screenshots so far, and the frame rate with a full field has not been measured: please tell us if the first person view is slow on your PC.
+- New: first person view has car models by class (GT3/DTM, GT4, touring, stock car, open wheel), turning wheels, glossy paint and brake lights.
+- New: tarmac, grass and sky pictures instead of flat colour.
+- New: distance boards (200, 150, 100, 50 m) before corners. View menu switch.
+- New: start gantry, grandstands, pit lane with garages and barriers on the start straight, placed from the road and parked cars (a guess). View menu switch.
+- Changed: model and picture files ship with the program (about 3 MB more). A missing file is drawn plain.
+- Known: frame rate with a full field not measured; tell us if the first person view is slow.
 
 ## 0.1.0-alpha.13
-- New: First person view, a 3D prototype (View drop-down "First person" in the incident replay and in the Race replay). You sit in the car (with a rear-view mirror) or drag the picture to look around, turn the mouse wheel to move away and orbit the car, double-click to get back in the seat. The road follows the height the cars drove (RaceRoom, Le Mans Ultimate and Automobilista 2 give it), cars tilt with the slope, and the wheels turn with the car's speed. The cars are plain GT3-style models (the games give no car models) and the ground between road stretches is only an estimate, so it is a diagram, not the game's view. It needs a graphics card that runs DirectX 11; if it cannot start, a simpler drawing is used.
-- New: Live steward view (Tools > Live steward view). For a league steward who spectates a RaceRoom dedicated server: collisions show as they happen for the whole field and decisions are saved with the recording. Settings > Penalty server... can send a penalty (slowdown, drive-through, stop-and-go, disqualification) to the steward's own dedicated server, at the address typed there. It is OFF until turned on, and it is the only thing the program ever sends over the network. Settings > Automatic penalties... can propose penalties by how sure the tool is and how hard the hit was (you apply them with a key, they go after a countdown, or at once). This has only been tried against a test stand-in and the server's web page, not in a real session with players: please tell us what happens, and use "In game" or "Countdown" rather than "Automatic" until you trust it.
-- Changed: a new look (colours, fonts, icons) and a more polished track map and incident picture.
+- New: first person view (3D prototype): View > First person in the incident and race replay. Sit in the car or orbit it with the mouse. Needs DirectX 11, otherwise a simpler drawing is used.
+- New: Live steward view (Tools > Live steward view) for spectating a RaceRoom dedicated server: collisions as they happen, decisions saved with the recording.
+- New: Settings > Penalty server... sends penalties to the steward's own dedicated server. OFF until turned on; the only thing the program ever sends over the network.
+- New: Settings > Automatic penalties... proposes penalties by confidence and hit strength. Only tried against a test stand-in, not real players: prefer "In game" or "Countdown" over "Automatic".
+- Changed: new look (colours, fonts, icons), more polished track map and incident picture.
 
 ## 0.1.0-alpha.12
-- New: mark a moment while you drive. Settings > Marker button... sets a keyboard key and/or a button on a wheel or joystick (any USB game controller). Press it during a race and "Moment marked" shows for a few seconds on the overlay; the moment is saved with the recording and shows as a cyan pin on the race replay timeline (hover for the time, click to jump there). It has only been tried with the keyboard so far: please tell us if your wheel's button works.
-- New: "Help me tune ..." in Settings > Analysis rules. Pick what you want in plain words (for example "Ignore light touches and rubbing", "Blame the car behind more in rear-end hits", "Be more decisive: fewer shared verdicts"; 15 goals) and the program lists which settings to change and to what, for the game chosen at the top. Slight, Medium or Strong sets how far. "Preview on the open recording" analyses it with and without the change and lists the incidents that appeared, disappeared or moved. "Add to draft" puts the values in your draft; "Save as a new preset" keeps them under a name. The amounts are first guesses: check them with the preview on your own recordings.
+- New: mark a moment while driving. Settings > Marker button... sets a key or a wheel/joystick button. Shown on the overlay and as a cyan pin on the race replay timeline. Only tried with a keyboard: tell us if your wheel button works.
+- New: "Help me tune ..." in Settings > Analysis rules: pick a goal in plain words (15 goals) and get the settings to change; preview on the open recording; add to draft or save as preset. Amounts are first guesses.
 
 ## 0.1.0-alpha.11
-- New: Automobilista 2 is supported, as an EXPERIMENTAL feature (the window says so on its recordings and in the status line). Turn on Options > System > Shared Memory = "Project CARS 2" in the game (then restart it) and the program records and analyses your races like the other games. It is new and has only been checked on one race of light contacts: please send recordings of hard hits and wall hits (File > Export test data). The game gives other cars' position and speed but not their pedals, and it reports a collision strength only for your car. Recording folders are named with the game's internal class name (for example StockCarV8_2024).
-- Changed: the Standard rules are a little less sensitive, so the lightest touches are no longer counted as incidents (velocity-change trigger 1.0 to 1.3 m/s, RaceRoom impact 8 to 10, Le Mans Ultimate impact 200 to 260, squeeze minimum time 0.8 to 1.0 s, push minimum time 1.0 to 1.2 s). The Hard racing and Strict presets are unchanged. Recordings you open again can show fewer incidents than before, and Statistics is counted again (open a recording, or press "Count them now").
-- New: RaceRoom class names are learned. When the game's data file is not found, the program learns the name of a class from the folder names of your recordings and from a small list that comes with the program, so the Drivers table and Statistics show "DTM 2024" instead of "Class 13136" for the classes it knows. The list grows as testers send recordings.
-- New: every game (RaceRoom, Le Mans Ultimate, Automobilista 2) has its own complete settings and its own preset in Settings > Analysis rules (the three buttons at the top choose the game), so for example Automobilista 2 can be on Hard racing while Le Mans Ultimate stays on Standard. A recording is analysed with the settings of its own game. Your existing rules.json is copied to all three games the first time. Statistics are counted with the settings of each recording's own game.
-- Changed: a new session now starts a new recording folder. Before, two races in a row on the same track (or a restart) ended up as two segments in one folder; now each session (practice, qualifying, race, or a restart) is saved by itself, for RaceRoom, Le Mans Ultimate and Automobilista 2. Pausing, the garage and the menus within a session do not split it. Recordings you already have are not changed.
-- New: the program has an icon (the shield and magnifier): in the window, the taskbar, the shortcuts and the installer.
-- New fault rule for a long chain: a driver who started a chain of contacts and is at fault for every later contact in it (at least 2) is now at fault for the first contact in full too. Before, the other car's small sideways movement before the first contact could still take a share of it (for example 82/18 instead of 100/0 after plowing through several cars). Two new values in Settings > Analysis rules (Control & chain tab) turn it off or change it. Checked on all our recordings: only that one incident changed.
+- New (EXPERIMENTAL): Automobilista 2. In the game set Options > System > Shared Memory = "Project CARS 2" and restart. Checked on one race of light contacts only: please send recordings of hard and wall hits (File > Export test data).
+- New: each game (RaceRoom, Le Mans Ultimate, Automobilista 2) has its own settings and presets in Settings > Analysis rules; a recording uses its own game's settings. Existing rules.json is copied to all three.
+- Changed: Standard rules slightly less sensitive (velocity-change trigger 1.0 to 1.3 m/s, RaceRoom impact 8 to 10, Le Mans Ultimate impact 200 to 260, squeeze 0.8 to 1.0 s, push 1.0 to 1.2 s). Hard racing and Strict unchanged. Reopened recordings can show fewer incidents; Statistics are recounted.
+- Changed: each session (practice, qualifying, race, restart) gets its own recording folder. Existing recordings unchanged.
+- New: RaceRoom class names learned from recording folder names and a small list, so "DTM 2024" shows instead of "Class 13136".
+- New: program icon (shield and magnifier).
+- New: chain rule: a driver at fault for every later contact in a chain (at least 2) is at fault for the first contact in full. Two new values in the Control & chain tab. Changed one incident on our recordings.
 
 ## 0.1.0-alpha.10
-- New: Settings > Analysis rules... opens a window with every value the tool uses to find contacts and to split the fault (about 120 values in 10 tabs, with a search box). Point at the (?) after a setting for what it is and what changing it does. Changes stay in a draft until you press Apply, which analyses the open recording again; orange values differ from the default and each one can be reset. The contact-detection values are separate for RaceRoom and Le Mans Ultimate and only apply when a saved recording is analysed (the recording itself keeps the raw data).
-- New: presets. A Preset drop-down in that window fills in a ready-made set of values: Standard (the defaults), Hard racing (top-split racing, where rubbing is part of the sport: light touches are not found as incidents, more incidents read as shared, sideways and steering evidence counts for less) and Strict (clean racing: lighter contacts are found, higher blame weights). They are untested guesses, not tuned on much real data. You can also save your own set under a name and delete it again.
-- New: your changes are saved in a small file (rules.json; Export and Import in the window save and read a copy), so a league can agree on the same rules by passing the file around. The program still never sends anything anywhere.
-- New: a result made with changed rules shows "Custom rules" (or the preset's name) under the tabs and in the incident report, because someone with other rules can get a different split for the same incident. A banner says when edits are not applied yet.
-- Fixed: the zip made by File > Export test data looked empty in Windows Explorer (and in some mail and cloud previews) although it held the recordings: its entries all started with "./". It is now made without that, and the program reads the zip back after making it. Zips made by older versions are fine: open them with 7-Zip or use File > Import test data.
-- Statistics are counted from whatever rules are active when you open a recording, so totals can mix rules if you change them.
+- New: Settings > Analysis rules... lists every value used to find contacts and split fault (about 120 values, 10 tabs, search box). Changes stay in a draft until Apply; changed values are orange and can be reset.
+- New: presets Standard, Hard racing and Strict (untested guesses). Save your own under a name.
+- New: settings saved in rules.json; Export and Import let a league share the same rules.
+- New: results made with changed rules show "Custom rules" (or the preset name) under the tabs and in the incident report.
+- Fixed: zip from File > Export test data looked empty in Windows Explorer. Older zips: open with 7-Zip or File > Import test data.
+- Known: Statistics use whatever rules are active when a recording is opened, so totals can mix rules.
 
 ## 0.1.0-alpha.9
-- New: RaceRoom now records every car by default, so the race replay and the fault logic see the whole field before and after a contact (with only the cars near you, an opponent closing from behind was not seen until it was 50 m away). It makes a recording roughly 10 MB for each minute of racing, about 300 MB for a 30-minute stint, and recordings that are not touched for 7 days are still zipped by themselves. The first screen is shown again to say so, and Settings > Record every car (RaceRoom)... turns it off (then the cars within about 150 m of you are kept, instead of 50 m before). Le Mans Ultimate already recorded every car.
-- New: the incident replay can show the field of view of the two drivers (View > Field of view in the replay, or the "Field of view" box under the replay): what each could see ahead, in the blind spot beside and behind the side windows, and in the mirrors. It is an assumption (a cockpit view), the game does not tell which camera a driver used. The tool uses it to judge how well a driver knew of the other car when it moved across, and the evidence says how the other car was seen.
-- Better fault judgement in corners: the tool now learns the line the field drives through each stretch of the track (from all the cars of the recording) and, in a side contact, measures who moved toward whom against that line, instead of against the car's own earlier path. A car that moved away and left room is no longer blamed for the other car closing the gap. It needs the cars of the session to have gone through, so it works for recordings (RaceRoom and Le Mans Ultimate), not yet for the live view or the first moments of a session.
-- Better: a car that steers across into a car ahead that holds its line is blamed for it, also at a race start, and the car ahead is not blamed for "moving across" when it was the car behind that moved.
-- Fixed: a tight corner is no longer taken for a spin (a hairpin at 50 km/h turns the nose faster than 2 rad/s without any slide). It turns a car's sideways movement off, so the verdict used to fall back to 50/50. The tool now compares how fast the nose turns with how fast the car's path turns.
-- Fixed: a recording without any incident now opens on the race, not on a few seconds on the grid.
-- Faster: big recordings open about a third faster (the numbers are read in place, not copied again and again).
-- Statistics are counted again after this update (open a recording, or press "Count them now"), because the fault rules changed. Some verdicts of older recordings change; the changes have not all been checked, please tell us when one looks wrong.
+- New: RaceRoom records every car by default (about 10 MB per minute, 300 MB for 30 min). Settings > Record every car (RaceRoom)... turns it off (then cars within about 150 m are kept, was 50 m).
+- New: the incident replay can show both drivers' field of view (View > Field of view). An assumption (cockpit view). The evidence says how the other car was seen.
+- Better: fault in corners is judged against the line the field drives (recordings only, not the live view).
+- Better: a car steering across into a car holding its line is blamed, also at a race start.
+- Fixed: a tight corner (hairpin) no longer counts as a spin, which had forced 50/50 verdicts.
+- Fixed: a recording with no incident opens on the race, not the grid.
+- Faster: big recordings open about a third faster.
+- Statistics are recounted (open a recording or "Count them now"). Some old verdicts change; tell us when one looks wrong.
 
 ## 0.1.0-alpha.8
-- New fault rule: a slow drift into another car's lane on a straight. The tool now looks at the last 10 seconds, against the road: if the car ahead drifted at least 1 m more toward a car close behind it than that car moved toward it, on a road that stays straight (and not in the 100 m before a corner), the car ahead is blamed for the lane change and the car behind is not blamed for the blind spot. Nothing in the older recordings we checked changes except one long contact that was already marked "needs steward review".
-- Statistics is counted again after this update (open a recording, or press "Count them now"), because the fault rules changed.
+- New fault rule: slow drift into another car's lane on a straight (last 10 s, against the road, not in the 100 m before a corner). The car ahead is blamed; the car behind is not blamed for the blind spot.
+- Statistics are recounted after this update.
 
 ## 0.1.0-alpha.7
-- New: File > Import test data... takes the zip someone made with Export test data and adds its recordings to a separate Imported list (tagged "imported"; a box under the filters shows all, yours or imported). They are kept apart from your own: they are not counted in your statistics or best laps. A name already in use gets "(2)" after it; nothing is overwritten.
-- New: Settings > Recordings folder... chooses where recordings are kept. It asks whether to move the recordings you already have, and the new folder is used from the next start. If the chosen folder is not there at start (a drive that is not connected), the default folder is used and the program says so.
-- New: best laps. The Tracks tab of Statistics shows your best lap on each track and layout for a car class you pick in a drop-down, how it improved over the sessions, and "Show lap" to open that lap in the replay. Statistics is counted again after this update (open a recording, or press "Count them now").
-- New: in the race replay, "Follow the selected car" keeps the car you picked in the middle while you zoom; pick another car and it follows that one.
-- Better fault judgement, using the road: the tool learns which way the road points from the cars that drive it. On a straight, a car that moves sideways into another is blamed, whoever was ahead; the 100 m before a corner count as the braking zone, where the car ahead keeps its line. A car ahead that moves into a faster car holding its line close behind, or that has just caused another contact, is blamed for it (a faster car that dives sideways into the car ahead still is). A car that was already level with the other car's middle is no longer blamed for "no braking". A car sent into a spin by another car is not blamed for what it then hits. In the first laps of a session the road is not known yet and the older rules apply.
-- Fixed: the program no longer saves an empty "probe_..." recording when the game shares its data in the menus before any session has started. Empty recordings of that kind left by older versions are removed when the program starts.
-- Fixed: a recording whose name ends in "(2)" (two sessions in the same minute) showed "(no date)"; it now shows its date.
+- New: File > Import test data... adds a zip from Export test data to a separate "imported" list, kept out of your statistics and best laps. Nothing is overwritten.
+- New: Settings > Recordings folder... chooses where recordings are kept and can move existing ones. If the folder is missing at start, the default is used.
+- New: best laps in Statistics > Tracks, per car class, with "Show lap" to open it in the replay. Statistics are recounted.
+- New: race replay "Follow the selected car" keeps it centred while zooming.
+- Better: fault judged against the road the cars drive: sideways moves on a straight are blamed on the mover; the 100 m before a corner is a braking zone; a car sent spinning is not blamed for what it hits. Not in the first laps (road unknown).
+- Fixed: empty "probe_..." recording saved from the game's menus. Old ones are removed at start.
+- Fixed: a recording named "(2)" showed "(no date)".
 
 ## 0.1.0-alpha.6
-- New: a Help window (Help > How to use Racing Steward, or F1) with topics: getting started, recordings and incidents, race replay, steward decisions and the report, statistics, storage, the alert, shortcuts, and what to do when something goes wrong. The About box is rewritten.
-- New: you can change the size of the panels by dragging the thin bars between them: the replay can be made much taller, and the widths of the list, replay and verdict can be changed. Double-click a bar for the default. The sizes are remembered.
-- New: the mouse wheel zooms the incident replay, as it does on the race replay map.
-- New: the race replay marks the formation lap. When RaceRoom has car collisions off (formation lap and countdown) and cars drive through each other, amber marks on the timeline and a note under the map say so. It is not counted as a contact.
-- Better: the recordings list is easier to read: each recording is its own card, and the open one has an orange edge and its incidents inside it.
-- Better: the race replay zoom and moving of the map are easier to find (Map + / - / Fit).
+- New: Help window (Help > How to use Racing Steward, or F1); About box rewritten.
+- New: drag the bars between panels to resize them (double-click resets); sizes are remembered.
+- New: mouse wheel zooms the incident replay.
+- New: race replay marks the formation lap (RaceRoom collisions off); not counted as contacts.
+- Better: recordings list is one card per recording; easier map zoom (Map + / - / Fit).
 
 ## 0.1.0-alpha.5
-- New: a menu bar (File, View, Tools, Settings, Help) and tabs instead of a row of buttons, with keyboard shortcuts (Ctrl+O, Ctrl+1/2/3, F5, Ctrl+plus/minus). Greyed-out items say what they need.
-- New: Recordings and incidents are one tab. The list shows each recording as a card; the open one unfolds to its incidents, and the incident you click is shown beside it. Search, Game / Track / Class filters and a "Sort by" dropdown.
-- New: Race replay tab: the whole race from above with every car, the standings with gaps and pit stops, and a timeline with the incidents marked. Play, pause and speed up to 32x, follow a car, zoom with the mouse wheel and move the map by dragging.
-- New: RaceRoom can record every car, so the race replay shows the whole field (Settings > Record every car (RaceRoom)). It is off until you agree to a warning: recordings become about 4 times bigger (roughly 10 MB for each minute of racing). Le Mans Ultimate always records every car.
-- New: the league incident report (Tools > Incident report..., steward view): one page for the browser with every incident, the steward's decision first, pictures of the contact, and the tool's analysis as supporting data.
-- New: recordings that have not been touched for 7 days are zipped by themselves (Settings > Zip old recordings... changes the days or turns it off). Recordings with a steward decision stay as they are.
-- Better: the tester notes describe the new window.
+- New: menu bar (File, View, Tools, Settings, Help), tabs and keyboard shortcuts (Ctrl+O, Ctrl+1/2/3, F5, Ctrl+plus/minus).
+- New: Recordings and incidents in one tab, with search, Game / Track / Class filters and sorting.
+- New: Race replay tab: whole race from above, standings with gaps and pit stops, timeline with incidents; speed up to 32x, follow a car, zoom, drag.
+- New: RaceRoom can record every car (Settings > Record every car (RaceRoom)); off until you accept a warning (about 10 MB per minute). Le Mans Ultimate always does.
+- New: league incident report (Tools > Incident report..., steward view): one browser page with every incident, steward decision first.
+- New: recordings untouched for 7 days are zipped (Settings > Zip old recordings...). Recordings with a steward decision stay.
+- Better: tester notes describe the new window.
 
 ## 0.1.0-alpha.4
-- New: a Statistics screen ("Statistics..." in the top bar) with overview, driving, tracks, cars, drivers, trends and hotspots, counted from all your recordings. Recordings are counted when you open them; "Count them now" counts the rest.
-- New: a darker, racing-style look, and an incident screen that needs no scrolling: replay on the left, verdict on the right, tabs (Evidence, Timeline, Steward decision, Each contact) underneath.
-- New: the incident list shows cards with the other driver, the verdict, the time, lap and speed, and a fault bar. Rules in the Evidence table have plain names.
-- New: in the replay, the driver you pick turns blue and the other cars turn grey. The car picker wraps onto several rows, and "Each contact" follows the driver you picked.
-- New: in a race with several classes, each car's class is shown (card, verdict and replay).
-- New: flags are shown as context for each incident (blue and yellow flag, wrong way, cutting the track). They do not change the fault split. Le Mans Ultimate gives them for every car; RaceRoom for your car only. They appear in a saved recording, not in the live view.
-- Better: after the game closes, the top bar says "No data from the game for N s, saving in M s" while the recording waits to be saved.
-
+- New: Statistics screen: overview, driving, tracks, cars, drivers, trends, hotspots. Recordings are counted when opened; "Count them now" counts the rest.
+- New: darker racing look; incident screen with replay left, verdict right and tabs (Evidence, Timeline, Steward decision, Each contact).
+- New: incident cards (other driver, verdict, time, lap, speed, fault bar); plain names for rules.
+- New: in the replay the picked driver is blue, the others grey.
+- New: each car's class shown in multi-class races.
+- New: flags as context (blue, yellow, wrong way, track cut); they do not change the split. Le Mans Ultimate: every car; RaceRoom: your car only; saved recordings only.
+- Better: the top bar counts down while a closed game's recording waits to be saved.
 
 ## 0.1.0-alpha.3
-- New: an optional alert over the game a few seconds after each contact, with who is at fault and the split. Off by default: tick "Alert after a contact" in the top bar. It only shows over a game in **borderless or windowed** mode, not over true full screen, and it never takes the mouse, the keys or the focus.
-- New: a "Test alert in 8 s" button, so you can switch to the game and see whether the alert appears over it.
-- The top bar and the tester notes now say the game must be in borderless or windowed mode for the alert.
+- New: optional alert over the game after each contact (who is at fault, split). Off by default ("Alert after a contact" in the top bar). Borderless or windowed mode only; never takes mouse, keys or focus.
+- New: "Test alert in 8 s" button.
+- Changed: top bar and tester notes say the game must be borderless or windowed.
 
 ## 0.1.0-alpha.2
-- New: Le Mans Ultimate support (turn on *Settings > Gameplay > Enable Plugins* in the game). The road is drawn from the track edges the game reports.
-- New: steward view for league stewards: every driver judged by name, with the steward's own decision, reasons and history kept beside the tool's number.
-- New: a Recordings screen with search, filters and sorting (it copes with hundreds of recordings), and an "Analysing" popup with a progress bar.
-- New: Manage recordings: the size of each recording, zip (about 3 to 5 times smaller, it still opens) and move to the Recycle Bin, with a warning when the tool has not learned from a recording yet.
-- New: brake (red), throttle (green) and steering shown under the replay for you, and for the other car when the game reports them (Le Mans Ultimate: every car; RaceRoom: your car only).
-- New: the road is remembered between sessions for each track layout; a kerb found once stays found, and the replay road stops at kerbs.
-- Better: choosing the recording that is already open no longer analyses it again, and the previous recording is cleared as soon as you pick another, so nothing of it shows while the new one loads.
-- Better: larger, more readable text (A- / A+), session types (practice, qualifying, race) kept apart, ground surfaces coloured.
+- New: Le Mans Ultimate (turn on Settings > Gameplay > Enable Plugins in the game). Road drawn from the track edges.
+- New: steward view: every driver judged by name, with the steward's own decision, reasons and history.
+- New: Recordings screen with search, filters and sorting; "Analysing" popup with progress.
+- New: Manage recordings: sizes, zip (3 to 5 times smaller), move to the Recycle Bin.
+- New: brake, throttle and steering under the replay (Le Mans Ultimate: every car; RaceRoom: yours).
+- New: road remembered per track layout; kerbs stay found.
+- Better: reopening the open recording does not analyse it again; the previous one clears at once.
+- Better: larger text (A- / A+), session types kept apart, coloured ground surfaces.
 
 ## 0.1.0-alpha.1
 - First test build: RaceRoom recording, collision detection, fault split with reasons, replay, test-data export.
