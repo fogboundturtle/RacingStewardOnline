@@ -1,5 +1,10 @@
-# Changelog
+﻿# Changelog
 
+## 0.1.0-alpha.16
+- Fixed: the program crashed now and then with a memory error (often while a race was being recorded, or when switching recordings). The cause was found in the crash reports: the three readers of the marker, apply and dismiss keys and wheel buttons looked for controllers at the same moment, and the Windows controller service (DirectInput) is not safe for that. They now take turns.
+- Changed: when the game is closed, the recording now ends after 15 seconds without data (it was 60), so the last race shows in the list without closing Racing Steward. A pause in the game that lasts longer than 15 seconds also ends the recording; what follows is saved as a recording of its own.
+- Changed: a gravel strip and a joined start line now also apply at the start of the lap, so the road no longer ends bare against the grass in front of the line.
+- Known: the 3D view uses 4x anti-aliasing, but the edges between the ground pictures (grass, gravel, sand) look stepped because they come from the recorded tyre positions, not from the picture. This is not fixed yet.
 ## 0.1.0-alpha.15
 - New: the first person view picks a sky at random each time it opens (11 daytime skies, 4 dusk, 2 night), by the time of day of the recording (the clock in its folder name): day, dusk or night. At night the sky is dark but the ground is not yet dimmed.
 - New: where a circuit is known (51 RaceRoom and Le Mans Ultimate circuits, from OpenStreetMap data that comes with the program), the pit lane and the grandstands are put where they really are, not guessed from the road. The map is laid over the track the recording drove; if it does not fit (another layout, or a game that differs from the real track) the old guessed layout is used. The program never downloads anything: the data is the file circuits.rsc beside it.
