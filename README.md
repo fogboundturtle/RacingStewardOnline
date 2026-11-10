@@ -10,7 +10,12 @@ Ever had a contact in mid-race and wondered who was actually at fault? **Racing 
 
 **No AI. Local analysis. Your rules. Explainable decisions.**
 
-**Racing Steward has no server of its own, no account and no tracking. Everything is analysed on your own PC, and your recordings never leave it unless you choose to pass a file on yourself. One optional feature, off until a league steward turns it on, sends a penalty to the steward's own RaceRoom dedicated server, only to the address they type. A second optional feature, off until you say yes, checks GitHub for a newer version.**
+**Private by design.** Racing Steward has no server, no account and no tracking. Your recordings are analysed on your own PC and stay there unless you share a file yourself.
+
+Two optional features use the network. Both are off until you turn them on:
+
+- **Update check:** asks GitHub whether a newer version exists.
+- **Live penalty sending (league stewards):** sends a penalty to the steward's own RaceRoom dedicated server, only to the address they enter.
 
 ## Main features
 
