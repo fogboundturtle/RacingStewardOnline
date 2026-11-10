@@ -20,8 +20,8 @@ Ever had a contact in mid-race and wondered who was actually at fault? **Racing 
 - **Whole-race replay:** every car on the circuit, live standings with gaps and pit stops, a timeline with the incidents marked, zoom, and "follow this car". Formation-lap overlaps (when the game has car collisions off) are marked so they are not mistaken for missed contacts.
 - **Steward tools:** judge every driver by name, record decisions with a ruling, split, penalty and reason (the tool's own number is kept beside yours, and earlier decisions stay in the history), and write a one-page **incident report** for your league.
 - **Statistics:** laps, incidents and fault, your driving, tracks, cars, drivers met and hotspots, added up over all your recordings, plus your **best lap on each track for a car class you pick**, with how it improved and a "Show lap" button.
-- **Road-aware fault rules:** the tool learns which way the road points from the cars that drive it, so it can tell a lane change on a straight from a turn-in at a corner, and it does not blame a driver for a spin another car caused.
-- **The line the field drives:** from all the cars of a recording the tool learns the usual line through each stretch of the track, and in a side contact it measures who moved toward whom against that line, so in a corner a car that moved away and left room is not blamed for the other car closing the gap.
+- **Road-aware fault rules:** the tool works out which way the road points from the cars that drive it, so it can tell a lane change on a straight from a turn-in at a corner, and it does not blame a driver for a spin another car caused.
+- **The line the field drives:** from all the cars of a recording the tool works out the usual line through each stretch of the track, and in a side contact it measures who moved toward whom against that line, so in a corner a car that moved away and left room is not blamed for the other car closing the gap.
 - **Field of view:** the incident replay can shade what the two drivers could see (in view, the blind spot, the mirrors), and the tool uses it to judge how well a driver knew of the other car. It is an assumption (a cockpit view), not the driver's real camera.
 - **Import:** open the recordings someone exported for you (File > Import test data...); they are kept apart from your own and are not counted in your statistics.
 - **Classes and flags:** each car's class in multi-class races, and blue and yellow flags shown as context for each incident.
@@ -54,7 +54,7 @@ Because the installer is not code-signed yet, Windows SmartScreen will show a "W
 
 1. **Launch** Racing Steward, read the data notice and agree.
 2. **Drive.** Start your sim and race. The app detects the game and records by itself (the line under the menu shows **REC**). Offline AI races are great for testing.
-3. **Close the game when you are done.** The app waits 60 seconds without data, then saves the recording and learns from it by itself. The line under the menu counts it down.
+3. **Close the game when you are done.** The app waits 60 seconds without data, then saves the recording and works out the track data from it by itself. The line under the menu counts it down.
 4. **Review.** On the **Recordings** tab, click a recording: it unfolds to its incidents. Click an incident for the replay, the chain of events, the verdict and the evidence. Drag the thin bars between the panels to make the replay bigger.
 5. **Watch the whole race.** The **Race replay** tab shows every car, the standings and a timeline. Space plays and pauses, the mouse wheel zooms, dragging moves the map.
 6. **Find things.** The search box, the Game / Track / Class filters and "Sort by" find a recording among many. **Statistics** adds up everything.
@@ -88,7 +88,7 @@ Turn on **Tools > Steward view (all drivers)** to judge driver-to-driver inciden
 ## ⚠️ Known alpha limitations
 
 - **Verdict accuracy:** the rules are not perfect yet. The goal of this public alpha is to catch edge cases to improve the analyzer.
-- **First laps and the live view:** the road and the usual line are learned from the cars that drive during the session. A saved recording has them from the first lap, but the live view and the first moments of a session judge with the older rules.
+- **First laps and the live view:** the road and the usual line are worked out from the cars that drive during the session. A saved recording has them from the first lap, but the live view and the first moments of a session judge with the older rules.
 - **Big recordings:** a 30-minute race with every car is a big file. How long it takes to open, and how much it costs the game while recording, is not measured yet; please tell us if you notice either.
 - **Telemetry depth:** RaceRoom gives brake, throttle and steering for your car only. Le Mans Ultimate gives them for every car, so its evidence is richer.
 - **Flags:** shown for your car in RaceRoom and for every car in Le Mans Ultimate, as context only. They do not change the fault split, and they appear in a saved recording, not in the live view.
