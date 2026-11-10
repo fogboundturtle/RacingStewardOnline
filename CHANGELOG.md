@@ -1,5 +1,16 @@
 ﻿# Changelog
 
+## 0.1.0-alpha.18
+- New: Help > Check for updates (opt-in, one question at first start). It installs the new version after checking GitHub's checksum. Testers on alpha.17 or older install this one by hand.
+- New: Settings > Acceleration unit (m/s², g or km/h/s) for braking figures.
+- New: the recordings list can be folded away (arrow at its top right).
+- New: a quick move across toward a car beside or behind counts extra, and so does a path steeper toward the other car over the approach (Settings > analysis rules > Side contact).
+- Changed: who moved toward whom is measured across the road where it is known, and small moves count for less.
+- Changed: the overtaker's blind-spot blame shrinks when the car ahead swerved across abruptly.
+- Changed: steering counts only when known for both cars, so the player alone is not blamed for it.
+- Changed: the split reads "Estimated responsibility", rounded to 5% (exports keep exact numbers).
+- Changed: Statistics are recounted; some verdicts change.
+
 ## 0.1.0-alpha.17
 - New (EXPERIMENTAL): Assetto Corsa EVO support. Checked on one practice and one race against AI only, game version 0.9.1.
 - AC Evo: other cars are named "Car 1", "Car 2" ...; their speed, heading and track position are worked out from their positions.
