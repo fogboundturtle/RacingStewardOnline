@@ -2,7 +2,7 @@
 
 Ever had a contact in mid-race and wondered who was actually at fault? **Racing Steward** is an automated collision analyzer for sim racers. It runs quietly alongside **RaceRoom Racing Experience**, **Le Mans Ultimate** or **Automobilista 2** (experimental), records your session, detects on-track contacts and breaks down who was responsible. It also replays the whole race from above and gives league stewards the tools to rule on incidents and write a report.
 
-# **ALWAYS OFFLINE. LOCAL PROCESSING. NO TELEMETRY.**
+# **ALWAYS OFFLINE. LOCAL PROCESSING. NO TELEMETRY UPLOADS.**
 
 **Racing Steward has no server of its own, no account and no tracking. Everything is analysed on your own PC, and your recordings never leave it unless you choose to pass a file on yourself. One optional feature, off until a league steward turns it on, sends a penalty to the steward's own RaceRoom dedicated server, only to the address they type.**
 
