@@ -2,9 +2,11 @@
 
 Ever had a contact in mid-race and wondered who was actually at fault? **Racing Steward** is an automated collision analyzer for sim racers. It runs quietly alongside **RaceRoom Racing Experience**, **Le Mans Ultimate** or **Automobilista 2** (experimental), records your session, detects on-track contacts and breaks down who was responsible. It also replays the whole race from above and gives league stewards the tools to rule on incidents and write a report.
 
-# **ALWAYS OFFLINE. LOCAL PROCESSING. NO TELEMETRY UPLOADS.**
+# **YOUR RACE. YOUR DATA. YOUR RULES.**
 
-**Racing Steward has no server of its own, no account and no tracking. Everything is analysed on your own PC, and your recordings never leave it unless you choose to pass a file on yourself. One optional feature, off until a league steward turns it on, sends a penalty to the steward's own RaceRoom dedicated server, only to the address they type.**
+**Local analysis. No telemetry uploads. No cloud required.**
+
+**Racing Steward has no server of its own, no account and no tracking. Everything is analysed on your own PC, and your recordings never leave it unless you choose to pass a file on yourself. One optional feature, off until a league steward turns it on, sends a penalty to the steward's own RaceRoom dedicated server, only to the address they type. A second optional feature, off until you say yes, checks GitHub for a newer version.**
 
 ## Main features
 
@@ -75,7 +77,7 @@ Turn on **Tools > Steward view (all drivers)** to judge driver-to-driver inciden
 
 ## 🔒 Privacy and local data
 
-- **100% local processing.** All recordings, track profiles and preferences live in `%LOCALAPPDATA%\RacingSteward`. Racing Steward contains no tracking and never sends your data to any server of ours (there is none). It has one optional network feature, off until a league steward turns it on: the live steward view can send a penalty to the steward's own RaceRoom dedicated server, only to the address they type (this PC by default).
+- **100% local processing.** All recordings, track profiles and preferences live in `%LOCALAPPDATA%\RacingSteward`. Racing Steward contains no tracking and never sends your data to any server of ours (there is none). It has two optional network features, both off until you turn them on. One: the live steward view can send a penalty to the steward's own RaceRoom dedicated server, only to the address they type (this PC by default). The other is the update check: it asks GitHub whether a newer release exists (Help > Check for updates), runs only if you allow it, and sends none of your data.
 - **What is recorded:** the driver names, track positions and inputs of the cars in the session, as given by the game (with "Record every car" off in RaceRoom, only the cars near you). None of it leaves your machine unless you share a file yourself.
 - **Sending feedback:** found a strange verdict? Use **File > Export test data...** to make an anonymized ZIP (your name becomes "Tester", steward names become "Steward") and send it yourself.
 - **Uninstalling** leaves your data folder. For a clean wipe, delete `%LOCALAPPDATA%\RacingSteward` by hand.
