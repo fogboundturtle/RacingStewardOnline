@@ -5,7 +5,7 @@ Ever had a contact in mid-race and wondered who was actually at fault? **Racing 
 # **RACING STEWARD**
 
 **Reconstruct the incident.**  
-**Trace the consequences.**  
+**Trace the chain of events.**  
 **Understand the responsibility.**
 
 **No AI. Local analysis. Your rules. Explainable decisions.**
