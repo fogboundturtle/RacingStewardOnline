@@ -1,6 +1,6 @@
 # Racing Steward
 
-Ever had a contact in mid-race and wondered who was actually at fault? **Racing Steward** is an automated collision analyzer for sim racers. It runs quietly alongside **RaceRoom Racing Experience**, **Le Mans Ultimate** or **Automobilista 2** (experimental), records your session, detects on-track contacts and breaks down who was responsible. It also replays the whole race from above and gives league stewards the tools to rule on incidents and write a report.
+Ever had a contact in mid-race and wondered who was actually at fault? **Racing Steward** is an automated collision analyzer for sim racers. It runs quietly alongside **RaceRoom Racing Experience**, **Le Mans Ultimate** or **Automobilista 2** (experimental), records your session, detects on-track contacts and breaks down who was responsible. It also replays the incident and the whole race, from above in 2D or in first person in 3D, and gives league stewards the tools to rule on incidents and write a report.
 
 # **RACING STEWARD**
 
@@ -23,6 +23,7 @@ Two optional features use the network. Both are off until you turn them on:
 - **Plain-English reconstruction:** a step-by-step story of how the incident unfolded, and a timeline of the chain of events.
 - **Evidence:** the rules that counted, in readable names ("Rear-end hit", "No braking before the hit"), with the values measured from the game's physics data.
 - **Top-down incident replay:** an overhead view of the contact, synced with brake, throttle and steering inputs, with mouse-wheel zoom.
+- **First-person 3D view (prototype):** see the incident through a driver's eyes, in the seat or orbiting the car with the mouse, with a rear-view mirror. Switch between the two drivers, and use it in the whole-race replay too. The road, ground and cars follow the elevation recorded by the game, with a sky, lighting and distance fog. If the graphics card cannot run it, the program falls back to a simpler drawing.
 - **Whole-race replay:** every car on the circuit, live standings with gaps and pit stops, a timeline with the incidents marked, zoom, and "follow this car". Formation-lap overlaps (when the game has car collisions off) are marked so they are not mistaken for missed contacts.
 - **Steward tools:** judge every driver by name, record decisions with a ruling, split, penalty and reason (the tool's own number is kept beside yours, and earlier decisions stay in the history), and write a one-page **incident report** for your league.
 - **Statistics:** laps, incidents and fault, your driving, tracks, cars, drivers met and hotspots, added up over all your recordings, plus your **best lap on each track for a car class you pick**, with how it improved and a "Show lap" button.
