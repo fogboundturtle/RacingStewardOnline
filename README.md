@@ -6,6 +6,9 @@ Ever had a contact in mid-race and wondered who was actually at fault? **Racing 
 
 **Local analysis. No telemetry uploads. No cloud required.**
 
+**NO AI. NO BLACK BOX.**  
+**JUST TELEMETRY, PHYSICS & RULES.**
+
 **Racing Steward has no server of its own, no account and no tracking. Everything is analysed on your own PC, and your recordings never leave it unless you choose to pass a file on yourself. One optional feature, off until a league steward turns it on, sends a penalty to the steward's own RaceRoom dedicated server, only to the address they type. A second optional feature, off until you say yes, checks GitHub for a newer version.**
 
 ## Main features
